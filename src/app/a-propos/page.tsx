@@ -28,7 +28,7 @@ export default function AProposPage() {
   ]
 
   return (
-    <div className="py-16 bg-white">
+    <div className="py-16">
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">

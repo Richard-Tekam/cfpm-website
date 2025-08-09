@@ -1,13 +1,13 @@
 'use client'
 
 import { useState } from "react"
-import { Calendar, ArrowRight } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import Image from 'next/image'
 
-export default function Actualites() {
+export default function ActualitesPage() {
   const actualites = [
     {
       id: 1,
@@ -51,10 +51,10 @@ export default function Actualites() {
 
   const categories = ["Toutes", "Formation", "Événement", "Partenariat", "Résultats", "Équipement", "Reconnaissance"]
 
-  // 🔹 State pour stocker la catégorie sélectionnée
+  // State pour stocker la catégorie sélectionnée
   const [selectedCategory, setSelectedCategory] = useState("Toutes")
 
-  // 🔹 Filtrage des actualités
+  // Filtrage des actualités
   const filteredActualites = selectedCategory === "Toutes"
     ? actualites
     : actualites.filter(article => article.category === selectedCategory)
@@ -92,13 +92,15 @@ export default function Actualites() {
             filteredActualites.map((article) => (
               <Card key={article.id} className="hover:shadow-lg transition-shadow">
                 <div className="relative">
-                  <Image
+                  {article.image &&(
+                    <Image
                     src={article.image}
                     alt={article.title}
                     className="w-full h-48 object-cover rounded-t-lg"
                     width={400}
                     height={200}
                   />
+                  )}
                   <Badge className="absolute top-4 right-4 bg-blue-600">
                     {article.category}
                   </Badge>

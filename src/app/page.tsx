@@ -38,13 +38,13 @@ export default function HomePage() {
     {
       title: "Langues Étrangères", 
       description: "Anglais, français, espagnol, allemand, italien, yemba - Communication professionnelle",
-      duration: "3-6 mois",
+      duration: "6-12 mois",
       level: "Débutant à avancé",
     },
     {
       title: "Management et Entrepreneuriat",
       description: "Marketing digital, gestion de projets, entrepreneuriat et gestion d'entreprise",
-      duration: "6-9 mois",
+      duration: "6-12 mois",
       level: "Intermédiaire",
     },
   ]
