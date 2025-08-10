@@ -8,20 +8,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { formationsData, getFormationBySlug } from '@/lib/formation-data'
 import Image from "next/image"
 
-interface FormationPageProps {
-  params: {
-    slug: string
-  }
-}
+/*interface PageProps {
+  params: {slug: string}
+}*/
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   return formationsData.map((formation) => ({
     slug: formation.slug,
   }))
 }
 
 // Ajouter les métadonnées dynamiques
-export async function generateMetadata({ params }: FormationPageProps) {
+export async function generateMetadata({params }: {params: {slug: string}}) {
   const formation = getFormationBySlug(params.slug)
 
   if (!formation) {
@@ -31,15 +29,14 @@ export async function generateMetadata({ params }: FormationPageProps) {
   }
 
   return {
-    title: `${formation.title} - CFP-M`,
+    title: formation.title,
     description: formation.description,
   }
 }
 
-export default async function FormationPage({ params }: FormationPageProps) {
-    // Attendre la résolution des paramètres
-  const { slug } = await params
-  const formation = getFormationBySlug(slug)
+export default async function FormationPage({params }: {params: {slug: string}}) {
+  
+  const formation = getFormationBySlug(params.slug)
 
   if (!formation) {
     notFound()
@@ -84,8 +81,8 @@ export default async function FormationPage({ params }: FormationPageProps) {
 
           <div className="relative">
             <Image 
-              width={20}
-              height={20}
+              width={800}
+              height={500}
               src={formation.image || "/placeholder.svg"} 
               alt={formation.title}
               className="w-full h-96 object-cover rounded-lg shadow-lg"

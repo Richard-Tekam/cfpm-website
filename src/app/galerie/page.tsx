@@ -41,60 +41,18 @@ export default function GaleriePage() {
     },
     {
       id: 5,
-      src: "/placeholder.svg?height=400&width=600",
+      src: "",
       title: "Équipements Modernes",
       category: "Équipements",
       description: "Nos machines et outils de dernière génération"
     },
     {
       id: 6,
-      src: "/placeholder.svg?height=400&width=600",
+      src: "",
       title: "Formation Plomberie",
       category: "Formations",
       description: "Installation et maintenance sanitaire"
     },
-    {
-      id: 7,
-      src: "/placeholder.svg?height=400&width=600",
-      title: "Journée Portes Ouvertes",
-      category: "Événements",
-      description: "Visite de nos installations"
-    },
-    {
-      id: 8,
-      src: "/placeholder.svg?height=400&width=600",
-      title: "Atelier Menuiserie",
-      category: "Ateliers",
-      description: "Travail du bois et assemblage"
-    },
-    {
-      id: 9,
-      src: "/placeholder.svg?height=400&width=600",
-      title: "Formation Maçonnerie",
-      category: "Formations",
-      description: "Techniques de construction et rénovation"
-    },
-    {
-      id: 10,
-      src: "/placeholder.svg?height=400&width=600",
-      title: "Salle Informatique",
-      category: "Équipements",
-      description: "Espace numérique pour la formation théorique"
-    },
-    {
-      id: 11,
-      src: "/placeholder.svg?height=400&width=600",
-      title: "Formation Sécurité",
-      category: "Formations",
-      description: "Sensibilisation aux règles de sécurité"
-    },
-    {
-      id: 12,
-      src: "/placeholder.svg?height=400&width=600",
-      title: "Présentation de Projets",
-      category: "Événements",
-      description: "Nos apprenants présentent leurs réalisations"
-    }
   ]
 
   const filteredImages = selectedCategory === "Toutes" 
@@ -138,11 +96,11 @@ export default function GaleriePage() {
                         <div className="relative group">
                             {image.src &&(
                               <Image 
-                              width={20}
-                              height={20}
-                              src={image.src || "/placeholder.svg"}
-                              alt={image.title}
-                              className="w-full h-64 object-cover transition-transform group-hover:scale-105"
+                                width={600}
+                                height={400}
+                                src={image.src}
+                                alt={image.title}
+                                className="w-full h-64 object-cover transition-transform group-hover:scale-105"
                               />
                             )}
                             <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">

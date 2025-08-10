@@ -1,4 +1,4 @@
-import { Clock, Users, Award, Calendar } from "lucide-react"
+import { Clock, Users, Award } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -87,8 +87,8 @@ export default function FormationsPage() {
                     <Card key={formation.slug} className="hover:shadow-lg transition-shadow">
                     <div className="relative">
                         <Image
-                        width={20}
-                        height={20}
+                        width={600}
+                        height={400}
                         src={formation.image || "/placeholder.svg"}
                         alt={formation.title}
                         className="w-full h-48 object-cover rounded-t-lg"
