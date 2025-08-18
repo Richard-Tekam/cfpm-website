@@ -1,5 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
-import nodemailer from "nodemailer"
+import nodemailer from "nodemailer";
+import createMessage from "@/app/service/message-service";
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,6 +18,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Adresse email invalide" }, { status: 400 })
     }
 
+    createMessage(nom, prenom, email, telephone, formation, message);
+
     // Configuration du transporteur email (utilise les variables d'environnement)
     const transporter = nodemailer.createTransporter({
       host: process.env.SMTP_HOST || "smtp.gmail.com",
@@ -31,7 +34,7 @@ export async function POST(request: NextRequest) {
     // Contenu de l'email à envoyer au CFP-M
     const mailOptions = {
       from: process.env.SMTP_USER,
-      to: process.env.CONTACT_EMAIL || "contact@cfp-m.cm",
+      to: process.env.CONTACT_EMAIL || "cfpmdschang54@gmail.com",
       subject: `Nouvelle demande de contact - ${formation || "Formation non spécifiée"}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px;">

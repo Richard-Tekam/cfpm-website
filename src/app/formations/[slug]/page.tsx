@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { formationsData, getFormationBySlug } from '@/lib/formation-data'
 import Image from "next/image"
+import type { Metadata } from "next";
 
 /*interface PageProps {
   params: {slug: string}
@@ -19,8 +20,8 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 }
 
 // Ajouter les métadonnées dynamiques
-export async function generateMetadata({params }: {params: {slug: string}}) {
-  const formation = getFormationBySlug(params.slug)
+export async function generateMetadata( {params}: Promise<{slug: string}>): Promise<Metadata> {
+  const formation = getFormationBySlug((await params).slug)
 
   if (!formation) {
     return {
@@ -36,7 +37,7 @@ export async function generateMetadata({params }: {params: {slug: string}}) {
 
 export default async function FormationPage({params }: {params: {slug: string}}) {
   
-  const formation = getFormationBySlug(params.slug)
+  const formation = getFormationBySlug((await params).slug)
 
   if (!formation) {
     notFound()

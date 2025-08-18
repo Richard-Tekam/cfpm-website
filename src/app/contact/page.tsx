@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {createMessage} from "@/app/service/message-service";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ export default function ContactPage() {
     e.preventDefault()
     // logique d'envoi du formulaire
     console.log("Formulaire soumis:", formData)
+    createMessage(formData.nom, formData.prenom, formData.email, formData.telephone, formData.formation, formData.message);
     alert("Votre message a été envoyé avec succès !")
   }
 
@@ -159,7 +161,7 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-blue-600 mt-1" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-gray-600">cfpmdschang@gmail.com</p>
+                    <p className="text-gray-600">cfpmdschang54@gmail.com</p>
                   </div>
                 </div>
 

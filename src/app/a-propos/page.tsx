@@ -121,7 +121,7 @@ export default function AProposPage() {
                     alt="Sénateur Gilbert FOUEPE NOUMEDEM" 
                     className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
                     />
-                    <CardTitle>Sénateur Gilbert FOUEPE NOUMEDEM</CardTitle>
+                    <CardTitle>sen. Gilbert FOUEPE NOUMEDEM</CardTitle>
                 </CardHeader>
                 <CardContent className="p-8">
                     <div className="text-center">
@@ -151,13 +151,13 @@ export default function AProposPage() {
                 </p>
             </div>
             <div className="bg-gray-50 rounded-lg p-8">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
                     <div className="text-center">
                         <Card className="max-w-xl mx-auto">
                             <CardHeader className="text-center">
                                 <Image
-                                height={10}
-                                width={10} 
+                                height={200}
+                                width={300} 
                                 src="/logo-minefop.png" 
                                 alt="logo du minefop" 
                                 className="w-32 h-32 rounded-full mx-auto mb-2 object-cover"
@@ -173,8 +173,8 @@ export default function AProposPage() {
                         <Card className="max-w-xl mx-auto">
                             <CardHeader className="text-center">
                                 <Image
-                                height={10}
-                                width={10} 
+                                height={200}
+                                width={300} 
                                 src="/logo-minjec.jpg" 
                                 alt="logo du minefop" 
                                 className="w-32 h-32 rounded-full mx-auto mb-2 object-cover"
@@ -190,8 +190,8 @@ export default function AProposPage() {
                         <Card className="max-w-xl mx-auto">
                             <CardHeader className="text-center">
                                 <Image
-                                height={10}
-                                width={10} 
+                                height={200}
+                                width={300} 
                                 src="/logo-acp.jpeg" 
                                 alt="logo du minefop" 
                                 className="w-32 h-32 rounded-full mx-auto mb-2 object-cover"
@@ -207,8 +207,8 @@ export default function AProposPage() {
                         <Card className="max-w-xl mx-auto">
                             <CardHeader className="text-center">
                                 <Image
-                                height={10}
-                                width={10} 
+                                height={200}
+                                width={300} 
                                 src="/logo-irex.jpeg" 
                                 alt="logo de irex" 
                                 className="w-32 h-32 rounded-full mx-auto mb-2 object-cover"
@@ -217,6 +217,22 @@ export default function AProposPage() {
                             <CardContent>
                                 <h4 className="font-semibold text-sky-500">IREX Canada</h4>
                                 <p className="text-sm text-gray-600">Partenaire International</p>
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <div className="text-center">
+                        <Card className="max-w-xl mx-auto">
+                            <CardHeader className="text-center">
+                                <Image
+                                height={200}
+                                width={300} 
+                                src="/jeune-batisseur.jpeg" 
+                                alt="logo de jeune batisseur" 
+                                className="w-32 h-32 rounded-full mx-auto mb-2 object-cover"
+                                />
+                            </CardHeader>
+                            <CardContent>
+                                <h4 className="font-semibold text-sky-500">Les Jeunes Bâtisseurs </h4>
                             </CardContent>
                         </Card>
                     </div>

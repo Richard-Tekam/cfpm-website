@@ -103,8 +103,8 @@ export default function GaleriePage() {
                                 className="w-full h-64 object-cover transition-transform group-hover:scale-105"
                               />
                             )}
-                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                                <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity p-4">
+                            <div className="absolute inset-0 bg-blue bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                                <div className="text-white text-center opacity-0 group-hover:opacity-50 transition-opacity p-4">
                                     <h3 className="text-lg font-semibold mb-2">{image.title}</h3>
                                     <p className="text-sm">{image.description}</p>
                                 </div>
